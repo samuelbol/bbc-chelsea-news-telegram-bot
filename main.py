@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 
 # Telegram bot API token
 TELEGRAM_TOKEN = ""
+CHANNEL_ID = "CHANNEL-ID"
 
 # BBC News URL to scrape
 BBC_CHELSEA_NEWS_URL = r"https://www.bbc.com/sport/football/teams/chelsea"
@@ -59,7 +60,7 @@ def send_news_to_telegram(news_items):
                             file.write("\n")
 
                         # Send the message to Telegram
-                        bot.send_message(chat_id='-1001765090306', text=message, parse_mode=ParseMode.MARKDOWN)
+                        bot.send_message(chat_id=CHANNEL_ID, text=message, parse_mode=ParseMode.MARKDOWN)
                         print(message)
 
                     except UnicodeError:
